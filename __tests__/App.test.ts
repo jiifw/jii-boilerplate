@@ -1,4 +1,4 @@
-import { fromApp } from 'app';
+import { fromApp } from '@root/app';
 
 describe('greeter function', () => {
   it('A valid message should return from promise method', async () => {

@@ -6,7 +6,7 @@
  */
 
 // App
-import { fromApp } from 'app';
+import { fromApp } from '@root/app';
 
 // Bootstrapper
 (async (): Promise<void> => {

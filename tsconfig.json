@@ -7,7 +7,7 @@
     "moduleResolution": "NodeNext",
     "baseUrl": "./src",
     "paths": {
-      "app/*": ["./app/*"]
+      "@root/*": ["./*"]
     },
     "esModuleInterop": true,
     "allowJs": true,

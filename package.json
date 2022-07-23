@@ -46,7 +46,7 @@
     "url": "https://github.com/blacksmoke26"
   },
   "engines": {
-    "node": ">= 16.13"
+    "node": ">= 16.16"
   },
   "license": "Apache-2.0",
   "dependencies": {
