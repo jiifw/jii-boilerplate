@@ -1,15 +1,15 @@
 # node-ts-boilerplate
 
-👩🏻‍💻 Developer Ready: A comprehensive template. Works out of the box for most [Node.js][nodejs] projects.
+Developer Ready: A comprehensive template. Works out of the box for most [Node.js](https://nodejs.org) projects.
 
-🏃🏽 Instant Value: All basic tools included and configured:
+Instant Value: All basic tools included and configured:
 
-- [TypeScript][typescript] [4.7][typescript-4-7].
+- [TypeScript](https://www.typescriptlang.org/) 4.7+.
 - Using [Babel-node](https://babeljs.io/docs/en/babel-node) for transpilation.
-- [ESLint][eslint] with some initial rules recommendation.
-- [Jest][jest] for fast unit testing and code coverage.
+- [ESLint](https://eslint.org/) with some initial rules recommendation.
+- [Jest](https://jestjs.io/) for fast unit testing and code coverage.
 - Type definitions for Node.js and Jest.
-- [Prettier][prettier] to enforce consistent code style.
+- [Prettier](https://prettier.io/) to enforce consistent code style.
 - NPM [scripts](#available-scripts) for common operations.
 - .editorconfig for consistent file format.
 - Simple example of TypeScript code and unit test.
