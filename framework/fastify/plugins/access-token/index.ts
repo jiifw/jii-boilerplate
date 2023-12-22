@@ -1,11 +1,12 @@
-// @ts-ignore
+/**
+ * Fastify access token retriever from request
+ */
+
 import merge from 'deepmerge';
 
 // types
 import { AccessTokenRequestDecorator } from './types';
-// @ts-ignore
 import { ServerRequest } from '@typings/server';
-// @ts-ignore
 import { plugin } from '@typings/plugin';
 
 export { AccessTokenRequestDecorator };

@@ -1,21 +1,15 @@
-// @ts-ignore
 import op from 'object-path';
 import { dirname } from 'node:path';
 import { sync } from 'glob';
-// @ts-ignore
 import merge from 'deepmerge';
 
 // utils
 import processModule from './libs/processModule';
-// @ts-ignore
 import { isObject } from '@framework/utils/object';
-// @ts-ignore
 import { normalize, normalizePathList } from '@framework/utils/path';
 
 // types
-// @ts-ignore
 import { ServerInstance } from '@typings/server';
-// @ts-ignore
 import { AutoModulesOption, module, ModuleMapping } from '@framework/fastify/plugins/auto-modules/types';
 
 interface ProcessModulesConfigArgs {

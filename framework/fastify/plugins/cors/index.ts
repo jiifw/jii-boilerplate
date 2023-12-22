@@ -2,19 +2,15 @@
  * Friendly CORS Fastify Plugin
  */
 
-import * as merge from 'deepmerge';
+import merge from 'deepmerge';
 
 // utils
 import { getOrigin } from './utils';
-// @ts-ignore
 import { importPluginConfig } from '@framework/utils/alias-resolver';
 
 
 // types
 import { CorsOptions } from 'cors';
-// @ts-ignore
-import { ServerInstance } from '@typings/server';
-// @ts-ignore
 import { plugin } from '@typings/plugin';
 
 // public types

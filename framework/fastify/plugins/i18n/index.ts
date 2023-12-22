@@ -2,19 +2,14 @@
  * Fastify i18n Plugin
  */
 
-import { I18n, ConfigurationOptions } from 'i18n';
+import { ConfigurationOptions, I18n } from 'i18n';
 
 // types
-// @ts-ignore
-import { ServerInstance, ServerReply, ServerRequest } from '@typings/server';
-// @ts-ignore
+import { ServerReply, ServerRequest } from '@typings/server';
 import { RenameByT } from '@typings/utility';
-// @ts-ignore
 import { plugin } from '@typings/plugin';
-// @ts-ignore
-import { getBoolValue, getArrayValue, getValue } from '@framework/env';
-// @ts-ignore
-import { importPluginConfig, rootDir, resolveAliasDir } from '@framework/utils/alias-resolver';
+import { getArrayValue, getBoolValue, getValue } from '@framework/env';
+import { importPluginConfig, resolveAliasDir } from '@framework/utils/alias-resolver';
 
 export type I181Options = ConfigurationOptions;
 export type I181Decorator = RenameByT<{

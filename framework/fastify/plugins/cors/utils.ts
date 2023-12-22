@@ -1,7 +1,6 @@
 import { parse } from 'node:url';
 
 // utils
-// @ts-ignore
 import { getArrayValue } from '@framework/env';
 
 /** Get origin from request */

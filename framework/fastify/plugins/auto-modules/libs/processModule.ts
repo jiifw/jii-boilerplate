@@ -2,11 +2,8 @@ import { sync } from 'glob';
 import { basename } from 'path';
 
 // utils
-// @ts-ignore
 import { rootDir } from '@framework/utils/alias-resolver';
-// @ts-ignore
 import { sanitizeRoute } from '@framework/utils/string';
-// @ts-ignore
 import { onlyKeys } from '@framework/utils/object';
 
 // types

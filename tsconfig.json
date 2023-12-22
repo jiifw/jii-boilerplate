@@ -19,6 +19,7 @@
     "strict": true,
     "sourceMap": true,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "resolveJsonModule": true,
     "noImplicitAny": false,
     "noImplicitThis": false,
@@ -34,5 +35,5 @@
     "allowUnreachableCode": true,
     "allowUnusedLabels": true
   },
-  "include": ["src/**/*", "__tests__/**/*"]
+  "include": ["src/**/*", "framework/**/*", "__tests__/**/*"]
 }

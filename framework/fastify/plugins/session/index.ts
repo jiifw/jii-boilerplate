@@ -3,17 +3,11 @@
  */
 
 // types
-// @ts-ignore
 import { FastifySessionOptions } from '@fastify/session';
-// @ts-ignore
-import { ServerInstance } from '@typings/server';
-// @ts-ignore
 import { plugin } from '@typings/plugin';
 
 // utils
-// @ts-ignore
 import { importPluginConfig } from '@framework/utils/alias-resolver';
-// @ts-ignore
 import { getValue } from '@framework/env';
 
 // public types

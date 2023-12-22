@@ -4,20 +4,14 @@
  * sent to the user with the status code set to 429
  */
 
-// @ts-ignore
 import merge from 'deepmerge';
 import rateLimitInitializer, { RateLimitOptions } from '@fastify/rate-limit';
 
 // utils
-// @ts-ignore
 import { getNumberValue } from '@framework/env';
 
 // types
-// @ts-ignore
-import { ServerInstance } from '@typings/server';
-// @ts-ignore
 import { importPluginConfig } from '@framework/utils/alias-resolver';
-// @ts-ignore
 import { plugin } from '@typings/plugin';
 
 // public types

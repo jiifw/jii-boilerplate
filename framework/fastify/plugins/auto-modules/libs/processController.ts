@@ -1,14 +1,9 @@
-// @ts-ignore
 import merge from 'deepmerge';
 
 // utils
-// @ts-ignore
 import { ServerInstance } from '@typings/server';
-// @ts-ignore
 import { sanitizeRoute } from '@framework/utils/string';
-// @ts-ignore
 import { rootDir } from '@framework/utils/alias-resolver';
-// @ts-ignore
 import { isObject } from '@framework/utils/object';
 import { validateRouteArgs } from '../utils';
 

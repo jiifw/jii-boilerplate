@@ -3,19 +3,15 @@
  */
 
 import { sync } from 'glob';
-// @ts-ignore
 import merge from 'deepmerge';
 
 // utils
 import { processRoutes } from './utils';
-// @ts-ignore
 import { normalizePathList } from '@framework/utils/path';
-// @ts-ignore
 import { importPluginConfig, rootDir } from '@framework/utils/alias-resolver';
 
 // types
 import { AutoControllerOptions } from './types';
-// @ts-ignore
 import { plugin } from '@typings/plugin';
 import { module } from '@plugins/auto-modules';
 

@@ -6,15 +6,9 @@
 import fastifySwagger, { SwaggerOptions } from '@fastify/swagger';
 
 // utils
-// @ts-ignore
-import { getNumberValue } from '@framework/env';
-// @ts-ignore
 import { importPluginConfig } from '@framework/utils/alias-resolver';
 
 // types
-// @ts-ignore
-import { ServerInstance } from '@typings/server';
-// @ts-ignore
 import { plugin } from '@typings/plugin';
 
 // public types

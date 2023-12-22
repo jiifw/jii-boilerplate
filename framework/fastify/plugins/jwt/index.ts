@@ -1,22 +1,15 @@
-// @ts-ignore
 import JWT from 'jsonwebtoken';
-// @ts-ignore
 import merge from 'deepmerge';
-// @ts-ignore
 import ms from 'ms';
 
 // types
 import { DecodeResponse, JWTRequestDecorator, JWTOptions } from './types';
-// @ts-ignore
 import { plugin } from '@typings/plugin';
-// @ts-ignore
 import { ServerRequest } from '@typings/server';
 
 // utils
 import { now, toExpirationMs } from './utils';
-// @ts-ignore
 import { getValue } from '@framework/env';
-// @ts-ignore
 import { importPluginConfig } from '@framework/utils/alias-resolver';
 
 /** JWT algorithm method name */

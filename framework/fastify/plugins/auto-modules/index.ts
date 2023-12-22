@@ -2,18 +2,13 @@
  * Fastify modules definition file autoloader
  */
 
-// @ts-ignore
 import merge from 'deepmerge';
 
 // types
 import { AutoModulesOption, ModuleMapping } from './types';
-// @ts-ignore
-import { ServerInstance } from '@typings/server';
-// @ts-ignore
 import { plugin } from '@typings/plugin';
 
 // utils
-// @ts-ignore
 import { importPluginConfig } from '@framework/utils/alias-resolver';
 
 // processors
