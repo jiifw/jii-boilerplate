@@ -5,9 +5,13 @@
     "module": "CommonJS",
     "lib": ["ESNext"],
     "moduleResolution": "NodeNext",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "@root/*": ["./*"]
+      "@root/*": ["./*"],
+      "@app/*": ["./src/*"],
+      "@framework/*": ["./framework/*"],
+      "@plugins/*": ["./framework/fastify/plugins/*"],
+      "@typings/*": ["./framework/typings/*"]
     },
     "esModuleInterop": true,
     "allowJs": true,
@@ -25,8 +29,10 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "allowUnreachableCode": true,
+    "allowUnusedLabels": true
   },
   "include": ["src/**/*", "__tests__/**/*"]
 }

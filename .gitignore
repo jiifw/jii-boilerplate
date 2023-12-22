@@ -24,16 +24,27 @@ node_modules/
 coverage
 
 # Transpiled files
-build/
+/.cache
+/build
 
 # JetBrains IDEs
 .idea/
 
 # Optional npm cache directory
 .npm
+.yarn
 
 # Optional eslint cache
 .eslintcache
 
 # Misc
 .DS_Store
+
+# Archive/Backup specific
+*.rar
+*.zip
+*.*bak*
+
+# Packager specific
+package-lock.json
+yarn.lock

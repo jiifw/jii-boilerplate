@@ -10,9 +10,13 @@
     [
       "module-resolver",
       {
-        "root": ["./src"],
+        "root": ["./"],
         "alias": {
-          "@root": "./src"
+          "@root": "./",
+          "@app": "./src",
+          "@framework": "./framework",
+          "@plugins": "./framework/fastify/plugins",
+          "@typings": "./framework/typings"
         }
       }
     ],

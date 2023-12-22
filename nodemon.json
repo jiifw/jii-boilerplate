@@ -1,4 +1,6 @@
 {
-  "watch": ["src/**/*"],
-  "ext": "js,mjs,ts,flow,json,graphql"
+  "watch": ["src/**/*", "framework/**/*"],
+  "ext": "js,jsx,mjs,ts,tsx,flow,json,graphql",
+  "verbose": false,
+  "quiet": true
 }
