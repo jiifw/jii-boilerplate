@@ -1,6 +1,14 @@
 import obp, { Path } from 'object-path';
 
+// utils
+import { rootDir } from '@framework/utils/alias-resolver';
+
 export type Environment = 'development' | 'staging' | 'production' | string;
+
+// register app specific variables
+process.env['PROJECT_ROOT_DIR'] = rootDir();
+process.env['PROJECT_FRAMEWORK_DIR'] = rootDir('framework');
+process.env['PROJECT_APP_DIR'] = rootDir('src');
 
 /**
  * @private
@@ -8,6 +16,7 @@ export type Environment = 'development' | 'staging' | 'production' | string;
  */
 const replaceDynamicVars = (value: string): string | null => {
   const matchers = [...value.matchAll(/\$\{([^}]+)}/gm)];
+
   if ( !matchers.length ) {
     return null;
   }
@@ -20,7 +29,7 @@ const replaceDynamicVars = (value: string): string | null => {
     value = value.replace(placeholder, varValue);
   }
 
-  return null;
+  return value;
 }
 
 export function getValue<T>(name: Path, defaultValue: T): T {
