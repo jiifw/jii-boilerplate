@@ -8,7 +8,7 @@ import { ServerInstance } from '@typings/server';
 let babelAliasesMap: Record<string, string>;
 
 export const rootDir = (...joins: string[]): string => {
-  return path.normalize(path.join(`${__dirname}/../../`, ...joins));
+  return path.normalize(path.join(`${__dirname}/../..`, ...joins));
 };
 
 const getBabelAliasesMap = async (): Promise<Record<string, string>> => {
