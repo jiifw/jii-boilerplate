@@ -1,14 +1,14 @@
 import fastify from 'fastify';
 
 // types
-import { ServerHTTPOptions, ServerInstance } from '@typings/server';
+import { ServerHTTPOptions, ServerInstance } from '@framework/typings/server';
 
 // utils
 import { getBoolValue, isProdEnvironment } from '@framework/env';
-import { importConfigFile } from '@framework/utils/alias-resolver';
+import { importConfigFile } from '@framework/base/config';
 
 // middleware processor
-import coreBootstrapper from '@framework/fastify/main/bootstrap';
+import fwBootstrapper from './bootstrap';
 import appBootstrapper from '@app/server/bootstrap';
 
 export async function createServerInstance(): Promise<ServerInstance> {
@@ -24,7 +24,7 @@ export async function createServerInstance(): Promise<ServerInstance> {
   await server.register(require('@fastify/middie'));
 
   // initialize bootstrapper(s)
-  await coreBootstrapper(server);
+  await fwBootstrapper(server);
   await appBootstrapper(server);
 
   return server;

@@ -1,34 +1,33 @@
 // types
-import { module } from '@plugins/auto-modules';
+import { module } from '@framework/plugins/auto-modules';
 
 export default async (): Promise<module.Controller> => [
-  ['index', async () => ({status: 'ok'})],
-  ['list', actionList],
-  ['POST create', actionCreate],
-  ['POST form', actionForm],
+  ['index', index],
+  ['list', list],
+  ['POST create', create],
+  ['POST form', form],
 ];
 
-const actionList = async (req) => {
+const index = async (req, reply, app) => {
   return {
-    header: req.accessToken.header(),
-    query: req.accessToken.query(),
-    authBearer: req.accessToken.authBearer(),
-    body: req.accessToken.body(),
+    status: 'ok',
   };
 };
 
-const actionCreate = async (req) => {
+const list = async (req, reply, app) => {
   return {
-    header: req.accessToken.header(),
-    query: req.accessToken.query(),
-    authBearer: req.accessToken.authBearer(),
-    body: req.accessToken.body(),
+    status: 'ok',
   };
 };
 
-const actionForm = async (req) => {
+const create = async (req) => {
   return {
-    formBody: req.accessToken.formBody(),
-    retrieve: req.accessToken.retrieve(),
+    status: 'ok',
+  };
+};
+
+const form = async (req) => {
+  return {
+    status: 'ok',
   };
 };

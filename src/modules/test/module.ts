@@ -1,5 +1,5 @@
 // types
-import { ModuleConfiguration } from '@plugins/auto-modules';
+import { ModuleConfiguration } from '@framework/plugins/auto-modules';
 
 export default <ModuleConfiguration>{
   id: 'test',

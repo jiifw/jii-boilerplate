@@ -1,5 +1,5 @@
 // types
-import { ServerInstance, ServerRequest, ServerReply } from '@typings/server';
+import { ServerInstance, ServerRequest, ServerReply } from '@framework/typings/server';
 import { RouteOptions, HTTPMethods } from 'fastify';
 
 /** Routes option to pass all module actions */

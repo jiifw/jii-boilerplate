@@ -4,16 +4,15 @@
 
 import * as dotenv from 'dotenv';
 
-dotenv.config({ path: `${__dirname}/../.env` });
-
 // utils
-import { getValue, getNumberValue, isProdEnvironment } from '@framework/env';
-import { createServerInstance } from '@framework/fastify/base/bootstrapper';
+import { getNumberValue, getValue, isProdEnvironment } from '@framework/env';
+import { createServerInstance } from '@framework/server/bootstrapper';
+
+dotenv.config({ path: `${__dirname}/../.env` });
 
 export default async function bootstrap() {
   // Create and initialize fastify instance
   const server = await createServerInstance();
-
   const config = {
     host: getValue<string>('SERVER_HOST', 'localhost'),
     port: getNumberValue('SERVER_PORT', 8030),

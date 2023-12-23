@@ -7,13 +7,13 @@ import merge from 'deepmerge';
 
 // utils
 import { processRoutes } from './utils';
-import { normalizePathList } from '@framework/utils/path';
-import { importPluginConfig, rootDir } from '@framework/utils/alias-resolver';
+import { normalizePathList, root } from '@framework/utils/path';
+import { importPluginConfig } from '@framework/base/config';
 
 // types
 import { AutoControllerOptions } from './types';
-import { plugin } from '@typings/plugin';
-import { module } from '@plugins/auto-modules';
+import { plugin } from '@framework/typings/plugin';
+import { module } from '@framework/plugins/auto-modules';
 
 // public types
 export type Controller = module.Controller;
@@ -37,7 +37,7 @@ export const handler: plugin.Handler = async (server, options) => {
   )).map(path => sync(path)).flat();
 
   for await (const controllerPath of controllers) {
-    const processor = await import(rootDir(controllerPath));
+    const processor = await import(root(controllerPath));
     const routes = await processor.default(server);
 
     if (!Array.isArray(routes)) {

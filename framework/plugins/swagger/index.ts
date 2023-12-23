@@ -6,10 +6,10 @@
 import fastifySwagger, { SwaggerOptions } from '@fastify/swagger';
 
 // utils
-import { importPluginConfig } from '@framework/utils/alias-resolver';
+import { importPluginConfig } from '@framework/base/config';
 
 // types
-import { plugin } from '@typings/plugin';
+import { plugin } from '@framework/typings/plugin';
 
 // public types
 export { SwaggerOptions };

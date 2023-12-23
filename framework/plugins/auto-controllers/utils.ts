@@ -2,7 +2,7 @@ import { module } from '../auto-modules/types';
 
 // types
 import { HTTPMethods } from 'fastify';
-import { ServerInstance } from '@typings/server';
+import { ServerInstance } from '@framework/typings/server';
 
 export const processRoutes = async (routes: module.Controller, server: ServerInstance): Promise<void> => {
   for await (const route of routes) {

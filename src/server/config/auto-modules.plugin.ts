@@ -1,6 +1,6 @@
 // types
-import { ServerInstance } from '@typings/server';
-import { AutoModulesOption } from '@plugins/auto-modules';
+import { ServerInstance } from '@framework/typings/server';
+import { AutoModulesOption } from '@framework/plugins/auto-modules';
 
 export default async (server: ServerInstance): Promise<AutoModulesOption> => ({
   modulesPath: [],

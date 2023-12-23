@@ -16,15 +16,15 @@ export enum MiddlewareMiddleware {
 
 /** Middleware plugins */
 export enum MiddlewarePlugin {
-  CORS = '@plugins/cors',
-  RateLimit = '@plugins/rate-limit',
-  AutoControllers = '@plugins/auto-controllers',
-  AutoModules = '@plugins/auto-modules',
-  Swagger = '@plugins/swagger',
-  Session = '@plugins/session',
-  AccessToken = '@plugins/access-token',
-  Jwt = '@plugins/jwt',
-  I18n = '@plugins/i18n',
+  CORS = '@framework/plugins/cors',
+  RateLimit = '@framework/plugins/rate-limit',
+  AutoControllers = '@framework/plugins/auto-controllers',
+  AutoModules = '@framework/plugins/auto-modules',
+  Swagger = '@framework/plugins/swagger',
+  Session = '@framework/plugins/session',
+  AccessToken = '@framework/plugins/access-token',
+  Jwt = '@framework/plugins/jwt',
+  I18n = '@framework/plugins/i18n',
 }
 
 /** Core middleware paths */

@@ -4,13 +4,13 @@ import ms from 'ms';
 
 // types
 import { DecodeResponse, JWTRequestDecorator, JWTOptions } from './types';
-import { plugin } from '@typings/plugin';
-import { ServerRequest } from '@typings/server';
+import { plugin } from '@framework/typings/plugin';
+import { ServerRequest } from '@framework/typings/server';
 
 // utils
 import { now, toExpirationMs } from './utils';
 import { getValue } from '@framework/env';
-import { importPluginConfig } from '@framework/utils/alias-resolver';
+import { importPluginConfig } from '@framework/base/config';
 
 /** JWT algorithm method name */
 export const JWT_DEFAULT_ALGORITHM: JWT.Algorithm = 'HS512';

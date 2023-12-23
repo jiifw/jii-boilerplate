@@ -5,11 +5,11 @@
 import { ConfigurationOptions, I18n } from 'i18n';
 
 // types
-import { ServerReply, ServerRequest } from '@typings/server';
-import { RenameByT } from '@typings/utility';
-import { plugin } from '@typings/plugin';
+import { ServerReply, ServerRequest } from '@framework/typings/server';
+import { RenameByT } from '@framework/typings/utility';
+import { plugin } from '@framework/typings/plugin';
 import { getArrayValue, getBoolValue, getValue } from '@framework/env';
-import { importPluginConfig, resolveAliasDir } from '@framework/utils/alias-resolver';
+import { importPluginConfig, resolveAliasDir } from '@framework/base/aliases';
 
 export type I181Options = ConfigurationOptions;
 export type I181Decorator = RenameByT<{

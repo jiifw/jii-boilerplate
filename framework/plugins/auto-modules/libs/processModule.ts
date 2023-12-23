@@ -2,18 +2,18 @@ import { sync } from 'glob';
 import { basename } from 'path';
 
 // utils
-import { rootDir } from '@framework/utils/alias-resolver';
 import { sanitizeRoute } from '@framework/utils/string';
 import { onlyKeys } from '@framework/utils/object';
 
 // types
 import { ControllerConfiguration, ModuleConfig, ModuleMapping } from '../types';
+import { root } from '@framework/utils/path';
 
 export default async (modConfig: ModuleConfig): Promise<ModuleMapping | null> => {
   /** Modules' list */
   const controllers: Array<string> = modConfig.controllersPath
     .map(route => {
-      const wildcardPath = rootDir(route.replace(/@module/g, modConfig.dirPath)) + '/*.controller.ts';
+      const wildcardPath = root(route.replace(/@module/g, modConfig.dirPath)) + '/*.controller.ts';
       return sync(wildcardPath);
     }).flat();
 

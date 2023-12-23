@@ -9,7 +9,7 @@ import { isObject } from '@framework/utils/object';
 import { normalize, normalizePathList } from '@framework/utils/path';
 
 // types
-import { ServerInstance } from '@typings/server';
+import { ServerInstance } from '@framework/typings/server';
 import { AutoModulesOption, module, ModuleMapping } from '@framework/fastify/plugins/auto-modules/types';
 
 interface ProcessModulesConfigArgs {

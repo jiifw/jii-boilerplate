@@ -1,7 +1,7 @@
 // types
-import { ServerInstance } from '@typings/server';
+import { ServerInstance } from '@framework/typings/server';
 import { Required } from 'utility-types';
-import { Middleware as MiddlewarePath } from '@typings/middleware';
+import { Middleware as MiddlewarePath } from '@framework/typings/middleware';
 
 export type MiddlewareType = 'middleware' | 'plugin' | 'callback' | 'after' | 'register';
 

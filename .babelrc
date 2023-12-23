@@ -14,9 +14,7 @@
         "alias": {
           "@root": "./",
           "@app": "./src",
-          "@framework": "./framework",
-          "@plugins": "./framework/fastify/plugins",
-          "@typings": "./framework/typings"
+          "@framework": "./framework"
         }
       }
     ],

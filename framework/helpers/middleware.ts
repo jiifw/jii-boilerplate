@@ -1,12 +1,12 @@
 import fp from 'fastify-plugin';
 
 // utils
-import { importFile } from '@framework/utils/alias-resolver';
 import { isObject } from '@framework/utils/object';
+import { importFile } from '@framework/utils/file';
 
 // types
-import { plugin } from '@typings/plugin';
-import { ServerInstance } from '@typings/server';
+import { plugin } from '@framework/typings/plugin';
+import { ServerInstance } from '@framework/typings/server';
 import {
   MiddlewareAfter, MiddlewareCallback, MiddlewareMiddleware,
   MiddlewarePlugin, MiddlewareRegister, MiddlewareType, Registry,
@@ -70,7 +70,7 @@ const registerCustomPlugin = async <T>(
  *
  *await applyMiddleware([
  *  { path: 'fastify-favicon', type: 'register' },
- *  { path: '@plugins/cors', type: 'plugin' },
+ *  { path: '@framework/plugins/cors', type: 'plugin' },
  *  { path: 'x-xss-protection', type: 'middleware' },
  *  {
  *    async handler(error: any) {

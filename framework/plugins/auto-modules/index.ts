@@ -6,10 +6,10 @@ import merge from 'deepmerge';
 
 // types
 import { AutoModulesOption, ModuleMapping } from './types';
-import { plugin } from '@typings/plugin';
+import { plugin } from '@framework/typings/plugin';
 
 // utils
-import { importPluginConfig } from '@framework/utils/alias-resolver';
+import { importPluginConfig } from '@framework/base/config';
 
 // processors
 import { processModulesConfig } from './utils';

@@ -5,7 +5,7 @@
 import { NotFound } from 'http-errors';
 
 // types
-import { Controller } from '@plugins/auto-controllers';
+import { Controller } from '@framework/plugins/auto-controllers';
 
 export default async (): Promise<Controller> => [
   /** Homepage */

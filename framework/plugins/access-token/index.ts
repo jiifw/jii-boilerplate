@@ -6,8 +6,8 @@ import merge from 'deepmerge';
 
 // types
 import { AccessTokenRequestDecorator } from './types';
-import { ServerRequest } from '@typings/server';
-import { plugin } from '@typings/plugin';
+import { ServerRequest } from '@framework/typings/server';
+import { plugin } from '@framework/typings/plugin';
 
 export { AccessTokenRequestDecorator };
 

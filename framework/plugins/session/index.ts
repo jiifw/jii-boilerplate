@@ -4,10 +4,10 @@
 
 // types
 import { FastifySessionOptions } from '@fastify/session';
-import { plugin } from '@typings/plugin';
+import { plugin } from '@framework/typings/plugin';
 
 // utils
-import { importPluginConfig } from '@framework/utils/alias-resolver';
+import { importPluginConfig } from '@framework/base/config';
 import { getValue } from '@framework/env';
 
 // public types

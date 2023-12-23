@@ -1,14 +1,9 @@
 import obp, { Path } from 'object-path';
 
 // utils
-import { rootDir } from '@framework/utils/alias-resolver';
+import { getAlias } from '@framework/base/aliases';
 
 export type Environment = 'development' | 'staging' | 'production' | string;
-
-// register app specific variables
-process.env['PROJECT_ROOT_DIR'] = rootDir();
-process.env['PROJECT_FRAMEWORK_DIR'] = rootDir('framework');
-process.env['PROJECT_APP_DIR'] = rootDir('src');
 
 /**
  * @private
@@ -17,7 +12,7 @@ process.env['PROJECT_APP_DIR'] = rootDir('src');
 const replaceDynamicVars = (value: string): string | null => {
   const matchers = [...value.matchAll(/\$\{([^}]+)}/gm)];
 
-  if ( !matchers.length ) {
+  if (!matchers.length) {
     return null;
   }
 
@@ -30,17 +25,17 @@ const replaceDynamicVars = (value: string): string | null => {
   }
 
   return value;
-}
+};
 
 export function getValue<T>(name: Path, defaultValue: T): T {
   let value = obp.get<T>(process.env, name, defaultValue);
 
   if (typeof value === 'string') {
     const rendered = <T>replaceDynamicVars(value);
-    if ( rendered ) value = rendered;
+    if (rendered) value = rendered;
   }
 
-  return value;
+  return <T>getAlias(value as string, false);
 }
 
 export function getBoolValue(name: Path, defaultValue: boolean = false): boolean {
@@ -69,10 +64,23 @@ export function getArrayValue<T>(name: Path, defaultValue: Array<T>): Array<T> {
   }
 }
 
-export function isEnvironment(environment: Environment = 'development'): boolean {
-  return getValue<string>('NODE_ENV', 'development').trim() === environment;
+/**
+ * Get current environment name
+ */
+export function environment(): string {
+  return getValue<string>('NODE_ENV', 'development').trim();
 }
 
+/**
+ * Match that the active environment is same as the provided one
+ */
+export function isEnvironment(env: Environment = 'development'): boolean {
+  return environment() === env;
+}
+
+/**
+ * Current environment is production or not
+ */
 export function isProdEnvironment(): boolean {
   return isEnvironment('production');
 }

@@ -6,12 +6,12 @@ import merge from 'deepmerge';
 
 // utils
 import { getOrigin } from './utils';
-import { importPluginConfig } from '@framework/utils/alias-resolver';
+import { importPluginConfig } from '@framework/base/config';
 
 
 // types
 import { CorsOptions } from 'cors';
-import { plugin } from '@typings/plugin';
+import { plugin } from '@framework/typings/plugin';
 
 // public types
 export { CorsOptions };

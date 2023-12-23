@@ -11,8 +11,8 @@ import rateLimitInitializer, { RateLimitOptions } from '@fastify/rate-limit';
 import { getNumberValue } from '@framework/env';
 
 // types
-import { importPluginConfig } from '@framework/utils/alias-resolver';
-import { plugin } from '@typings/plugin';
+import { importPluginConfig } from '@framework/base/config';
+import { plugin } from '@framework/typings/plugin';
 
 // public types
 export { RateLimitOptions };

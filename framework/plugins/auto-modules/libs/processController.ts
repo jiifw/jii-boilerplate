@@ -1,18 +1,18 @@
 import merge from 'deepmerge';
 
 // utils
-import { ServerInstance } from '@typings/server';
+import { ServerInstance } from '@framework/typings/server';
 import { sanitizeRoute } from '@framework/utils/string';
-import { rootDir } from '@framework/utils/alias-resolver';
 import { isObject } from '@framework/utils/object';
 import { validateRouteArgs } from '../utils';
 
 // types
 import { ControllerMapping, ModuleConfiguration } from '../types';
 import { RouteOptions } from 'fastify';
+import { root } from '@framework/utils/path';
 
 export default async (controller: ControllerMapping, server: ServerInstance, config: ModuleConfiguration) => {
-  const processor = await import(rootDir(controller.path));
+  const processor = await import(root(controller.path));
   const controllerRoutes = await processor.default(server);
 
   if (!Array.isArray(controllerRoutes)) {
