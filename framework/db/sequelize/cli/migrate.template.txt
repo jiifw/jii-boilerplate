@@ -1,0 +1,13 @@
+// types
+import { DataTypes, Sequelize } from 'sequelize';
+import { Migration } from '@framework/db/sequelize/umzug';
+
+export const up: Migration = async ({ context: sequelize }: { context: Sequelize }) => {
+  await sequelize.getQueryInterface().createTable('<table>', {
+    // add columns here
+  });
+};
+
+export const down: Migration = async ({ context: sequelize }: { context: Sequelize }) => {
+  await sequelize.getQueryInterface().dropTable('<table>');
+};
