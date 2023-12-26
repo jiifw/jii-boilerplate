@@ -1,11 +1,9 @@
 // types
 import { I181Decorator } from '@framework/plugins/i18n';
 import { JWTRequestDecorator } from '@framework/plugins/jwt';
-import { SequelizeDecorator } from '@framework/plugins/sequelize';
 import { AccessTokenRequestDecorator } from '@framework/plugins/access-token';
 
 export type ServerInstance = Partial<{
-  db: SequelizeDecorator;
 }>;
 
 export type ServerRequest = Partial<{
