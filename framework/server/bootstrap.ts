@@ -20,8 +20,6 @@ export default async (server: ServerInstance): Promise<void> => {
     { path: '@fastify/cookie', type: 'register' },
     { path: '@fastify/formbody', type: 'register' },
     { path: '@fastify/multipart', type: 'register', config: { attachFieldsToBody: 'keyValues' } },
-    { path: '@framework/plugins/auto-controllers', type: 'plugin' },
-    { path: '@framework/plugins/auto-modules', type: 'plugin' },
     {
       async handler(error: any) {
         if (error) throw error;

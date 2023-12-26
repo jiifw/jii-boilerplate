@@ -2,17 +2,22 @@
  * Fastify server
  */
 
-import * as dotenv from 'dotenv';
-
 // utils
-import { getNumberValue, getValue, isProdEnvironment } from '@framework/env';
+import { loadEnv, getNumberValue, getValue, isProdEnvironment } from '@framework/env';
+import { memo } from '@framework/base/di';
 import { createServerInstance } from '@framework/server/bootstrapper';
+import { ServerInstance } from '@framework/typings/server';
 
-dotenv.config({ path: `${__dirname}/../.env` });
+// di instance
+global['di'] = new Map<string, any>();
+
+// load env
+loadEnv();
 
 export default async function bootstrap() {
   // Create and initialize fastify instance
-  const server = await createServerInstance();
+  const server = memo<ServerInstance>('appServerInstance', await createServerInstance());
+
   const config = {
     host: getValue<string>('SERVER_HOST', 'localhost'),
     port: getNumberValue('SERVER_PORT', 8030),

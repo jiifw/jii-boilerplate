@@ -1,5 +1,7 @@
 // types
 import { module } from '@framework/plugins/auto-modules';
+import { User } from '@app/sequelize/models';
+import Jii from '@framework/jii';
 
 export default async (): Promise<module.Controller> => [
   ['index', index],
@@ -8,13 +10,14 @@ export default async (): Promise<module.Controller> => [
   ['POST form', form],
 ];
 
-const index = async (req, reply, app) => {
+const index = async (req, reply) => {
+  const records = await User.findAll({ raw: true });
   return {
-    status: 'ok',
+    status: records,
   };
 };
 
-const list = async (req, reply, app) => {
+const list = async (req, reply) => {
   return {
     status: 'ok',
   };

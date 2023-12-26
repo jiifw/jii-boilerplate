@@ -11,5 +11,6 @@ export default async (server: ServerInstance): Promise<void> => {
     //{ path: '@framework/plugins/access-token', type: 'plugin' },
     //{ path: '@framework/plugins/jwt', type: 'plugin' },
     //{ path: '@framework/plugins/i18n', type: 'plugin' },
+    { path: '@framework/db/sequelize', type: 'plugin' },
   ], server);
 }

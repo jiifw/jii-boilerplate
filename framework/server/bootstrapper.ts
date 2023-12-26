@@ -10,6 +10,7 @@ import { importConfigFile } from '@framework/base/config';
 // middleware processor
 import fwBootstrapper from './bootstrap';
 import appBootstrapper from '@app/server/bootstrap';
+import { applyMiddleware } from '@framework/helpers/middleware';
 
 export async function createServerInstance(): Promise<ServerInstance> {
   const config = await importConfigFile<ServerHTTPOptions>(
@@ -26,6 +27,11 @@ export async function createServerInstance(): Promise<ServerInstance> {
   // initialize bootstrapper(s)
   await fwBootstrapper(server);
   await appBootstrapper(server);
+
+  await applyMiddleware([
+    { path: '@framework/plugins/auto-controllers', type: 'plugin' },
+    { path: '@framework/plugins/auto-modules', type: 'plugin' },
+  ], server);
 
   return server;
 }

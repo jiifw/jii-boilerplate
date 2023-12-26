@@ -1,4 +1,4 @@
-import path from 'node:path';
+import npath from 'node:path';
 
 // utils
 import { getAlias, hasAlias } from '@framework/base/aliases';
@@ -16,7 +16,7 @@ import { getAlias, hasAlias } from '@framework/base/aliases';
  * console.log(rootDir('package.json'));
  */
 export const root = (...joins: string[]): string => {
-  return path.normalize(path.join(`${__dirname}/../..`, ...joins));
+  return npath.normalize(npath.join(`${__dirname}/../..`, ...joins));
 };
 
 /**
@@ -29,12 +29,12 @@ export const root = (...joins: string[]): string => {
  * console.log(resolvePath('@framework/utils/file'));
  */
 export const resolve = (path: string): string => {
-  return require.resolve(getAlias(path));
+  return npath.normalize(require.resolve(getAlias(path)));
 };
 
 /** Normalize path, Fix path slashes issue (OS related) */
-export const normalize = (thePath: string): string => {
-  return path.resolve(thePath).replace(/\\/g, '/');
+export const normalize = (path: string): string => {
+  return npath.resolve(path).replace(/\\/g, '/');
 };
 
 /**

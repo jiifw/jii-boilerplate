@@ -9,6 +9,9 @@ export namespace plugin {
     metadata?: Omit<PluginMetadata, 'name'>;
   }
 
+  /** Plugin configuration get to store/retrieve from registry */
+  export type ConfigKey = string;
+
   export type Handler = (
     server: ServerInstance, options: Record<string, any>,
   ) => Promise<void>;
