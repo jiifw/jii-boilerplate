@@ -27,6 +27,12 @@ export namespace cli {
     (name: string, description?: string, defaultValue?: unknown);
   }
 
+  export interface Argument {
+    name: string;
+    description?: string;
+    defaultValue?: unknown;
+  }
+
   export interface Command {
     /**
      * Name of the namespace.
@@ -37,11 +43,7 @@ export namespace cli {
     aliases?: Array<string>;
 
     /** Argument that commend accepts */
-    argument?: {
-      name: string;
-      description?: string;
-      defaultValue?: unknown;
-    };
+    argument?: Argument;
 
     /**
      * A short description regarding your command

@@ -28,14 +28,14 @@ export default async function registerCommand(Class: ClassStatic<cli.Command>, p
 
   if (instance?.argument) {
     const args: [string, string] | [string, string, unknown] = [
-      instance?.argument?.name,
-      instance?.argument?.description,
+      instance.argument.name,
+      instance.argument.description,
     ];
 
-    if (instance?.argument?.defaultValue) {
+    if (instance.argument.defaultValue) {
       args.push(<string>instance?.argument?.defaultValue);
     }
-    command.argument.apply(null, args);
+    command.argument(...args);
   }
 
   command.aliases(instance.aliases);
