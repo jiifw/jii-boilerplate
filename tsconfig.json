@@ -9,7 +9,7 @@
     "paths": {
       "@root/*": ["./*"],
       "@app/*": ["./src/*"],
-      "@framework/*": ["./framework/*"],
+      "@framework/*": ["./framework/*"]
     },
     "esModuleInterop": true,
     "allowJs": true,
