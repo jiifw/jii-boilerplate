@@ -1,21 +1,29 @@
+// utils
+import {kebab} from './inflector';
+
 /**
  * Fix slashes in the given string and transform into route
  */
 export const sanitizeRoute = (route: string): string => {
   const sanitized = String(route || '')
-    .replace(/[\\]+/g, '/')
+    .replace(/\\+/g, '/')
     .replace(/^[/\\]/, '')
     .replace(/[/\\]$/, '');
 
-  return sanitized.split('/').map(kebabCase).join('/').toLowerCase();
+  return sanitized.split('/').map(kebab).join('/').toLowerCase();
 };
 
 /**
- * Transform string into a <code>kebab-case</code>
+ * Convert a non-string value into a string
+ * @param val - The mixed value
+ * @param [trim] - Trimming whitespaces?
  */
-export const kebabCase = (str: string): string => {
-  return str
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .replace(/[\s_]+/g, '-')
-    .toLowerCase();
+export const toString = (val: any, trim: boolean = false): string => {
+  let str = String(val || '');
+
+  if (trim) {
+    str = str.trim();
+  }
+
+  return str;
 };
