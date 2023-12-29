@@ -8,8 +8,12 @@ import { memo } from '@framework/base/di';
 import { createServerInstance } from '@framework/server/bootstrapper';
 import { ServerInstance } from '@framework/typings/server';
 
+// classes
+import JiiClass from '@framework/Jii';
+
 // di instance
 global['di'] = new Map<string, any>();
+global['Jii'] = null;
 
 // load env
 loadEnv();
@@ -17,6 +21,7 @@ loadEnv();
 export default async function bootstrap() {
   // Create and initialize fastify instance
   const server = memo<ServerInstance>('appServerInstance', await createServerInstance());
+  global['Jii'] = new JiiClass(server);
 
   const config = {
     host: getValue<string>('SERVER_HOST', 'localhost'),
