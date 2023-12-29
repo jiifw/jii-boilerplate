@@ -1,4 +1,5 @@
 import npath from 'node:path';
+import nfs, { mkdirSync } from 'node:fs';
 
 // utils
 import { getAlias, hasAlias } from '@framework/base/aliases';
@@ -54,4 +55,35 @@ export const normalizePathList = async (list: Array<string>, postfix: string = '
   }
 
   return newList;
+};
+
+enum PathType {
+  File = 'file',
+  Directory = 'directory',
+}
+
+/**
+ * Check that the given path exists and is directory or a file
+ */
+export const isPath = (path: string, type: 'dir' | 'file' = 'file'): boolean => {
+  const _path = normalize(path);
+
+  if (!nfs.existsSync(_path)) {
+    return false;
+  }
+
+  const stat = nfs.lstatSync(npath.normalize(_path));
+  return type === 'dir' && stat.isDirectory()
+    || type === 'file' && stat.isFile();
+};
+
+/**
+ * Synchronously creates a directory recursively.
+ * @param aliasOrPath - Alias or absolute directory path
+ * @returns `true` if the directory was created, `false` otherwise
+ */
+export const createDir = (aliasOrPath: string): boolean => {
+  const dirPath = npath.normalize(getAlias(aliasOrPath));
+  mkdirSync(dirPath, { recursive: true });
+  return isPath(dirPath, 'dir');
 };

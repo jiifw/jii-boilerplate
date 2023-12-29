@@ -80,6 +80,19 @@ export const variablize = (str: string): string => {
 };
 
 /**
+ * Returns given string as class name
+ *
+ * Converts a word like "send_email" to "SendEmail". It
+ * will remove non-alphanumeric character from the input, so
+ * "who's online" will be converted to "WhoSOnline".
+ *
+ * @param str - The input string
+ */
+export const classname = (str: string): string => {
+  return ucFirst(variablize(str));
+};
+
+/**
  * Returns given string as constant name (JS).
  *
  * Converts a word like "send_email" to "sendEmail". It
