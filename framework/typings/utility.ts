@@ -29,3 +29,8 @@ export type XOR<T, U> =
     U extends object ?
       (Without<T, U> & U) | (Without<U, T> & T)
       : U : T
+
+/**
+ * Generic constructor type
+ */
+export type Constructor = new (...args: any[]) => any;

@@ -28,6 +28,8 @@ export interface UserModelStatic<T extends Model> extends ModelStatic<T>,
   TypeTraitStatic<T>,
   StatusTraitStatic<T> {
 
+  id?: string;
+
   //<editor-fold desc="Status constants">
   /**
    * @default 10
