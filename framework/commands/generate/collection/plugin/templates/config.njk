@@ -1,0 +1,12 @@
+// types
+import { ServerInstance } from '@framework/typings/server';
+import { {{ plugin.class }}Options } from '{{ plugin.namespace }}';
+
+/**
+ * {{ plugin.class }} plugin options
+ * @param server - Server instance
+ * @returns {{ plugin.class }} options
+ */
+export default async (server: ServerInstance): Promise<{{ plugin.class }}Options> => ({
+  // Add supported options here
+});

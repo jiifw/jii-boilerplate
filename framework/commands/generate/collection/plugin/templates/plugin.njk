@@ -1,0 +1,34 @@
+/**
+ * {{ plugin.class }} plugin
+ */
+
+import merge from 'deepmerge';
+
+// utils
+import { importPluginConfig } from '@framework/base/config';
+
+// types
+import { plugin } from '@framework/typings/plugin';
+import { {{ plugin.class }}Options } from './types';
+
+// public types
+export { {{ plugin.class }}Options };
+
+/**
+ * {{ plugin.class }} plugin info
+ */
+export const info: plugin.Info = {
+  id: '{{ plugin.id }}',
+  name: '{{ plugin.id }}-plugin',
+};
+
+/**
+ * {{ plugin.class }} logic handler
+ */
+export const handler: plugin.Handler = async (server, options) => {
+  const config = await importPluginConfig<{{ plugin.class }}Options>(info.id, server, merge({
+    // Add default options here
+  }, options));
+
+  // Implement plugin logic here
+};
