@@ -25,6 +25,7 @@ export enum MiddlewarePlugin {
   AccessToken = '@framework/plugins/access-token',
   Jwt = '@framework/plugins/jwt',
   I18n = '@framework/plugins/i18n',
+  Authenticate = '@framework/plugins/authenticate',
 }
 
 /** Core middleware paths */
