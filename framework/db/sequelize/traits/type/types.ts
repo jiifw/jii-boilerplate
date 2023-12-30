@@ -5,7 +5,7 @@ export interface TypeTrait extends sequelize.Model {
    * Get type label
    * @returns The label / None
    */
-  toTypeLabel(): string | null;
+  toTypeLabel?(): string | null;
 }
 
 export interface TypeTraitStatic<T extends sequelize.Model> extends sequelize.ModelStatic<T> {
@@ -14,13 +14,13 @@ export interface TypeTraitStatic<T extends sequelize.Model> extends sequelize.Mo
    * @param type - Status ID
    * @returns The label / None
    */
-  typeLabel(type: string | number): string | null;
+  typeLabel?(type: string | number): string | null;
 
   /**
    * Get types labels
    * @returns Pairs of labels (e.g., <code>{type: label}</code>)
    */
-  typeLabels(): Record<string | number, string>;
+  typeLabels?(): Record<string | number, string>;
 }
 
 export type TraitType = sequelize.Trait<TypeTraitStatic<undefined>>;

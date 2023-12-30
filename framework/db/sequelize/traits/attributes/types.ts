@@ -10,7 +10,7 @@ export interface AttributesTrait extends sequelize.Model {
    * @param except=[] - List of attributes whose value should NOT be returned.
    * @returns Attribute values (name => value).
    */
-  attributesValue(names?: string[], except?: string[]): Record<string, string>;
+  attributesValue?(names?: string[], except?: string[]): Record<string, string>;
 }
 
 export interface AttributesTraitStatic<T extends sequelize.Model> extends sequelize.ModelStatic<T> {
@@ -29,14 +29,14 @@ export interface AttributesTraitStatic<T extends sequelize.Model> extends sequel
    *
    * @returns Attribute hints (name => hint)
    */
-  attributeHints(): Record<string, string>;
+  attributeHints?(): Record<string, string>;
 
   /**
    * Returns the attribute names
    * @param except=[] - List of attributes whose value should NOT be returned.
    * @returns Attribute names
    */
-  attributesName(except?: string[]): string[];
+  attributesName?(except?: string[]): string[];
 
   /**
    * Returns the attribute labels.
@@ -50,7 +50,7 @@ export interface AttributesTraitStatic<T extends sequelize.Model> extends sequel
    *
    * @returns Attribute names
    */
-  attributeLabels(): Record<string, string>;
+  attributeLabels?(): Record<string, string>;
 }
 
 export type TraitType = sequelize.Trait<AttributesTraitStatic<AttributesTrait>>;

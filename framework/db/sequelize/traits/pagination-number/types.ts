@@ -31,16 +31,16 @@ export interface NumberPaginationTraitConfig {
    * Current page
    * @default 1
    */
-  current: number;
+  current?: number;
   /**
    * Limit of rows per page
    * @default 20
    */
-  perPage: number;
+  perPage?: number;
 }
 
 export interface PaginationNumberTraitStatic<T extends sequelize.Model> extends sequelize.ModelStatic<T> {
-  paginationNumber(findOptions?: Partial<FindOptions<T>>, options?: Partial<NumberPaginationTraitConfig>): Promise<NumberPaginationResult<T>>;
+  paginationNumber?(findOptions?: Partial<FindOptions<T>>, options?: Partial<NumberPaginationTraitConfig>): Promise<NumberPaginationResult<T>>;
 }
 
 export type TraitType = sequelize.Trait<PaginationNumberTraitStatic<undefined>>;

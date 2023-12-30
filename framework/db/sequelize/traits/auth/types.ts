@@ -9,41 +9,41 @@ export interface AuthTrait extends sequelize.Model {
    * @param password - Password to set
    * @returns Whether the password is correct
    */
-  setPassword(password: string): void;
+  setPassword?(password: string): void;
 
   /**
    * Verifies a password against a hash.
    * @param password - Password to verify
    * @returns Whether the password is correct
    */
-  validatePassword(password: string): void;
+  validatePassword?(password: string): void;
 
   /**
    * Generates new password reset token
    */
-  generatePasswordResetToken(): void;
+  generatePasswordResetToken?(): void;
 
   /**
    * Removes password reset token
    */
-  removePasswordResetToken(): void;
+  removePasswordResetToken?(): void;
 
   /**
    * Returns a key that can be used to check the validity of a given identity ID.
    */
-  getAuthKey(): string;
+  getAuthKey?(): string;
 
   /**
    * Validates the given auth key
    * @param authKey - The given auth key
    * @returns True when valid / False otherwise
    */
-  validateAuthKey(authKey: string): boolean;
+  validateAuthKey?(authKey: string): boolean;
 
   /**
    * Generates a token authentication key
    */
-  generateAuthKey(): void;
+  generateAuthKey?(): void;
 }
 
 export interface AuthTraitStatic<T extends sequelize.Model>
@@ -55,7 +55,7 @@ export interface AuthTraitStatic<T extends sequelize.Model>
    * @param [options={}] - Additional options
    * @return Promise instance (Found record / Not found)
    */
-  findByPasswordResetToken<T extends sequelize.Model>(
+  findByPasswordResetToken?<T extends sequelize.Model>(
     token: string, findOptions?: Partial<FindOptions>, options?: Partial<{
       /** Password reset token expire in seconds (Defaults to 3600) */
       expire?: number;
@@ -68,7 +68,7 @@ export interface AuthTraitStatic<T extends sequelize.Model>
    * @param [options={}] - Additional options
    * @returns True when valid / False otherwise
    */
-  isPasswordResetTokenValid(token: string, options?: Partial<{
+  isPasswordResetTokenValid?(token: string, options?: Partial<{
     /** Password reset token expire in seconds (Defaults to 3600) */
     expire: number;
   }>): boolean;
