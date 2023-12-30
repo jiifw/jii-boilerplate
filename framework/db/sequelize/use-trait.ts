@@ -4,7 +4,6 @@ import { existsSync } from 'node:fs';
 import { normalize, resolve } from '@framework/utils/path';
 
 // types
-import { Model } from '@framework/db/sequelize/base/Model';
 import { sequelize } from './types';
 import { getValue } from '@framework/env';
 import { getAlias } from '@framework/base/aliases';
@@ -28,7 +27,7 @@ import { getAlias } from '@framework/base/aliases';
  * - Core trait: `#framework://{trait}` *(a trait directory under `@framework/db/sequelize/traits`)*
  * - App trait: `#app://{trait}` *(a trait directory under `@app/sequelize/traits`)*
  */
-export default function use(model: typeof Model, traits: Array<sequelize.TraitPath> = []): void {
+export default function use<T>(model: T, traits: Array<sequelize.TraitPath> = []): void {
   // Skip
   if (!traits.length) {
     return;
