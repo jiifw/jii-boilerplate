@@ -54,6 +54,13 @@ export default class IdentityProvider<T extends IdentityRecord> {
   }
 
   /**
+   * Sets user identity instance or object
+   */
+  setIdentity(identity: T | IdentityRecord | null): void {
+    this.identity = identity;
+  }
+
+  /**
    * A method to encode the user identity data to a token
    *
    * Encodes a payload and create JWT token
