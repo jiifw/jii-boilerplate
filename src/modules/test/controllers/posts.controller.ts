@@ -1,10 +1,9 @@
 // types
 import { module } from '@framework/plugins/auto-modules';
 import { User } from '@app/sequelize/models';
-import Jii from '@framework/jii';
 
 export default async (): Promise<module.Controller> => [
-  ['index', index],
+  ['/', index],
   ['list', list],
   ['POST create', create],
   ['POST form', form],
